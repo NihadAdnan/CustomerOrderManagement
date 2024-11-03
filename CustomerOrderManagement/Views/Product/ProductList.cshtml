@@ -1,0 +1,29 @@
+﻿
+@{
+    var products = ViewBag.ProductList;
+    int slNo = 0;
+}
+
+<h1>Product List</h1>
+<table class="table table-hover table-bordered table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in products)
+        {
+            <tr>
+                <td>@(++slNo)</td>
+                <td>@product.Name</td>
+                <td>@product.Description</td>
+                <td>@product.UnitPrice</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustomerOrderManagement.Models\CustomerOrderManagement.Models.csproj" />
+    <ProjectReference Include="..\CustomerOrderManagement.Repository\CustomerOrderManagement.Repository.csproj" />
+    <ProjectReference Include="..\CustomerOrderManagement.Service.Abstractions\CustomerOrderManagement.Service.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

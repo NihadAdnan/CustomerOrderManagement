@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustomerOrderManagement.Models\CustomerOrderManagement.Models.csproj" />
+    <ProjectReference Include="..\CustomerOrderManagement.Repository.Abstraction\CustomerOrderManagement.Repository.Abstractions.csproj" />
+    <ProjectReference Include="..\CustomerOrderManagement.Repository\CustomerOrderManagement.Repository.csproj" />
+    <ProjectReference Include="..\CustomerOrderManagement.Service.Abstractions\CustomerOrderManagement.Service.Abstractions.csproj" />
+    <ProjectReference Include="..\CustomerOrderManagement.Service\CustomerOrderManagement.Service.csproj" />
+  </ItemGroup>
+
+</Project>
