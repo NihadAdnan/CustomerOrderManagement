@@ -1,4 +1,5 @@
-﻿using CustomerOrderManagement.Repository.Abstraction;
+﻿using CustomerOrderManagement.Repository;
+using CustomerOrderManagement.Repository.Abstractions;
 using CustomerOrderManagement.Repository.Repositories;
 using CustomerOrderManagement.Service;
 using CustomerOrderManagement.Service.Abstractions;
@@ -11,14 +12,16 @@ namespace CustomerOrderManagement.Configurations
     {
         public static void AddRepositories(this IServiceCollection services)
         {
-            services.AddScoped<CustomerOrderDbContext>();
+            services.AddScoped<DbContext,CustomerOrderDbContext>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
         }
         public static void AddServices(this IServiceCollection services)
         {
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IOrderService, OrderService>();
         }
     }
 }

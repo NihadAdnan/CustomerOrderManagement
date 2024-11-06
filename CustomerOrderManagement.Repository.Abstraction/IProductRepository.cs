@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CustomerOrderManagement.Repository.Abstraction
+namespace CustomerOrderManagement.Repository.Abstractions
 {
-    public interface ICustomerRepository:IRepository<Customer>
+    public interface IProductRepository : IRepository<Product>
     {
     }
 }

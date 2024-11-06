@@ -1,9 +1,10 @@
 ﻿using CustomerOrderManagement.Models;
-using CustomerOrderManagement.Repository.Abstraction;
+using CustomerOrderManagement.Repository.Abstractions;
 using CustomerOrderManagement.Service.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,9 +22,9 @@ namespace CustomerOrderManagement.Service
             return _repository.AddAsync(entity);
         }
 
-        public Task<int> DeleteAsync(Func<T, bool> predicate)
+        public Task<int> DeleteAsync(T entity)
         {
-           return _repository.DeleteAsync(predicate);
+           return _repository.DeleteAsync(entity);
         }
 
         public Task<IEnumerable<T>> GetAllAsync()
@@ -31,7 +32,7 @@ namespace CustomerOrderManagement.Service
             return _repository.GetAllAsync();
         }
 
-        public Task<T> GetById(Func<T, bool> predicate)
+        public Task<T> GetById(Expression<Func<T, bool>> predicate)
         {
             return _repository.GetById(predicate);
         }

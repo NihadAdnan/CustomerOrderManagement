@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace CustomerOrderManagement.Service.Abstractions
 {
-    public interface ICustomerService:IService<Customer>
+    public interface IOrderService:IService<Order>
     {
-        
+
     }
 }

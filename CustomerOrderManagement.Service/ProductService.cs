@@ -1,16 +1,16 @@
 ﻿using CustomerOrderManagement.Models.EntityModels;
-using CustomerOrderManagement.Repository.Abstraction;
-using CustomerOrderManagement.Repository.Repositories;
+using CustomerOrderManagement.Repository;
+using CustomerOrderManagement.Repository.Abstractions;
 using CustomerOrderManagement.Service.Abstractions;
 
 namespace CustomerOrderManagement.Service
 {
     public class ProductService:Service<Product>,IProductService
     {
-        private readonly IRepository<Product> _repository;
-        public ProductService():base(new ProductRepository())
+        private readonly IProductRepository _repository;
+        public ProductService(IProductRepository repository):base(repository)
         {
-            _repository = new ProductRepository();
+            _repository = repository;
         }
     }
 }

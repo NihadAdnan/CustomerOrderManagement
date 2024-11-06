@@ -45,9 +45,6 @@ namespace CustomerOrderManagement.Controllers
             {
                 return RedirectToAction("Create");
             }
-
-            model.Customers = (List<Customer>?)await _customerService.GetAllAsync();
-
             return View(model);
         }
         public async Task<IActionResult> Edit(int? id)
@@ -91,6 +88,18 @@ namespace CustomerOrderManagement.Controllers
             await _customerService.UpdateAsync(existingCustomer);
 
             return RedirectToAction("Index");
+        }
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (id > 0)
+            {
+                var customer =await _customerService.GetById(cu => cu.Id == id);
+                var result=await _customerService.DeleteAsync(customer);
+                var model = new CustomerIndexViewModel();
+                model.Customers =(List<Customer>) await _customerService.GetAllAsync();
+                return View("index",model);
+            }
+            return View("index");
         }
     }
 }

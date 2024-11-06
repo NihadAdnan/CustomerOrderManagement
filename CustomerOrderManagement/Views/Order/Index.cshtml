@@ -1,0 +1,31 @@
+﻿
+@{
+    var orders = ViewBag.OrderList;
+    int slNo = 0;
+}
+<div>
+    <a asp-controller="Order" asp-action="Create">Create Order</a>
+</div>
+<table class="table table-hover table-bordered table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">TotalAmount</th>
+            <th scope="col">CustomerId</th>
+            <th scope="col">ProductId</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in orders)
+        {
+            <tr>
+                <td>@(++slNo)</td>
+                <td>@order.TotalAmount</td>
+                <td>@order.CustomerId</td>
+                <td>@order.ProductId</td>
+                <td><a class="btn btn-secondary" asp-controller="Order" asp-action="Edit" asp-route-id="@order.Id">Edit</a> | <a class="btn btn-success">View</a> | <a class="btn btn-danger" asp-action="Delete" asp-route-id="@order.Id">Remove</a> </td>
+            </tr>
+        }
+    </tbody>
+</table>

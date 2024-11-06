@@ -1,10 +1,12 @@
-﻿
-@{
+﻿@{
     var products = ViewBag.ProductList;
     int slNo = 0;
 }
 
 <h1>Product List</h1>
+<div>
+    <a asp-controller="Product" asp-action="Create">Create Product</a>
+</div>
 <table class="table table-hover table-bordered table-striped">
     <thead>
         <tr>
@@ -12,6 +14,7 @@
             <th scope="col">Name</th>
             <th scope="col">Phone</th>
             <th scope="col">Address</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +25,7 @@
                 <td>@product.Name</td>
                 <td>@product.Description</td>
                 <td>@product.UnitPrice</td>
+                <td><a class="btn btn-secondary" asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id">Edit</a> | <a class="btn btn-success">View</a> | <a class="btn btn-danger" asp-action="Delete" asp-route-id="@product.Id">Remove</a> </td>
             </tr>
         }
     </tbody>

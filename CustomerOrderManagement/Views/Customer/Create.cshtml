@@ -1,11 +1,5 @@
 ﻿
 @model CustomerCreateViewModel
-
-@{
-    var customers = Model.Customers;
-    int slNo = 0; 
-}
-
 <h1>Customer Create</h1>
 
 
@@ -32,27 +26,4 @@
     
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-<h1>Customer List</h1>
-<table class="table table-hover table-bordered table-striped">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Address</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var customer in customers)
-        {
-            <tr>
-                <td>@(++slNo)</td>
-                <td>@customer.Name</td>
-                <td>@customer.PhoneNo</td>
-                <td>@customer.Address</td>
-            </tr>
-        }
-    </tbody>
-</table>
 

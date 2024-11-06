@@ -5,7 +5,9 @@
     var customers = Model.Customers; 
     int slNo = 0; 
 }
-
+<div >
+    <a asp-controller="Customer" asp-action="Create">Create Customer</a>
+</div>
 <table class="table table-hover table-bordered table-striped">
     <thead>
         <tr>
@@ -24,7 +26,7 @@
                 <td>@customer.Name</td>
                 <td>@customer.PhoneNo</td>
                 <td>@customer.Address</td>
-                <td><a class="btn btn-secondary" asp-action="Edit" asp-route-id="@customer.Id">Edit</a> | <a class="btn btn-success">View</a> | <a class="btn btn-danger">Remove</a> </td>
+                <td><a class="btn btn-secondary" asp-controller="Customer" asp-action="Edit" asp-route-id="@customer.Id">Edit</a> | <a class="btn btn-success">View</a> | <a class="btn btn-danger" asp-action="Delete" asp-route-id="@customer.Id">Remove</a> </td>
             </tr>
         }
     </tbody>

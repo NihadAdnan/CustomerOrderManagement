@@ -1,16 +1,11 @@
 ﻿using CustomerOrderManagement.Models;
-using CustomerOrderManagement.Repository.Abstraction;
-using EFCoreSamples.Database;
+using CustomerOrderManagement.Repository.Abstractions;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace CustomerOrderManagement.Repository
 {
-    public abstract class Repository<T> : IRepository<T> where T : class,IEntity
+    public abstract class Repository<T> : IRepository<T> where T : class, IEntity
     {
         private readonly DbContext _dbContext;
         public Repository(DbContext dbContext)
@@ -30,9 +25,9 @@ namespace CustomerOrderManagement.Repository
             return await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<int> DeleteAsync(Func<T, bool> predicate)
+        public async Task<int> DeleteAsync(T entity)
         {
-            _dbContext.Remove(predicate);
+            _dbContext.Remove(entity);
             return await (_dbContext.SaveChangesAsync());
         }
 
@@ -42,12 +37,11 @@ namespace CustomerOrderManagement.Repository
             return result;
         }
 
-        public async Task<T> GetById(Func<T, bool> predicate)
+        public async Task<T> GetById(Expression<Func<T, bool>> predicate)
         {
-            var result = await Entity.FindAsync(predicate);
+            var result = await Entity.FirstOrDefaultAsync(predicate);
             return result;
         }
-
         public async Task<int> UpdateAsync(T entity)
         {
             _dbContext.Update(entity);
