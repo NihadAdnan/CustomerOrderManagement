@@ -31,10 +31,15 @@ namespace CustomerOrderManagement.Repository
             return await (_dbContext.SaveChangesAsync());
         }
 
+        public IQueryable<T> GetAll()
+        {
+            var result = Entity.AsQueryable();
+            return result;
+        }
+
         public async Task<IEnumerable<T>> GetAllAsync()
         {
-            var result = await Entity.ToListAsync();
-            return result;
+            return await Entity.ToListAsync();
         }
 
         public async Task<T> GetById(Expression<Func<T, bool>> predicate)

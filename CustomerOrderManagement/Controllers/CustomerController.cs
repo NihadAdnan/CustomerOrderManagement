@@ -1,4 +1,5 @@
-﻿using CustomerOrderManagement.Models.EntityModels;
+﻿using CustomerOrderManagement.Models.APIModels.Customer;
+using CustomerOrderManagement.Models.EntityModels;
 using CustomerOrderManagement.Models.ViewModels.Customers;
 using CustomerOrderManagement.Service.Abstractions;
 using Microsoft.AspNetCore.Mvc;
@@ -12,9 +13,9 @@ namespace CustomerOrderManagement.Controllers
         {
             _customerService = customerService;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(CustomerSearchDTO customerSearchDTO)
         {
-            var customers =await _customerService.GetAllAsync();
+            var customers =_customerService.GetAll(customerSearchDTO);
             var model = new CustomerIndexViewModel();
             model.Customers = (List<Customer>)customers;
             return View(model);
@@ -101,5 +102,6 @@ namespace CustomerOrderManagement.Controllers
             }
             return View("index");
         }
+
     }
 }
