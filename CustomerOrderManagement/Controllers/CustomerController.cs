@@ -17,7 +17,7 @@ namespace CustomerOrderManagement.Controllers
         {
             var customers =_customerService.GetAll(customerSearchDTO);
             var model = new CustomerIndexViewModel();
-            model.Customers = (List<Customer>)customers;
+            model.Customers = customers;
             return View(model);
         }
         public async Task<IActionResult> Create()
