@@ -22,6 +22,7 @@ namespace CustomerOrderManagement.Service
                 ||cu.PhoneNo.ToLower().Contains(model.FilterText.ToLower())|| 
                 cu.Address.ToLower().Contains(model.FilterText));
             }
+            customers = customers.OrderBy(cu => cu.Name);
             var skipItems=(model.PageIndex-1) * model.PageSize;
             var takeItems = model.PageSize;
             var filteredCustomers=customers.Skip(skipItems<0?0:skipItems).Take(takeItems<=0?1:takeItems).ToList();
