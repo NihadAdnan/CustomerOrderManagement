@@ -1,4 +1,3 @@
-using CustomerOrderManagement.API.Automapper;
 using CustomerOrderManagement.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);

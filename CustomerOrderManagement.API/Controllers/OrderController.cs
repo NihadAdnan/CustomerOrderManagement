@@ -1,6 +1,5 @@
 ﻿using CustomerOrderManagement.Models.APIModels.Order;
 using CustomerOrderManagement.Service.Abstractions;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CustomerOrderManagement.API.Controllers

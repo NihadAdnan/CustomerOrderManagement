@@ -1,5 +1,4 @@
 ﻿using CustomerOrderManagement.Models.EntityModels;
-using CustomerOrderManagement.Repository;
 using CustomerOrderManagement.Repository.Abstractions;
 using CustomerOrderManagement.Service.Abstractions;
 

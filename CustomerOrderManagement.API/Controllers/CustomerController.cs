@@ -1,10 +1,7 @@
 ﻿using AutoMapper;
-using CustomerOrderManagement.API.Automapper;
 using CustomerOrderManagement.Models.APIModels.Customer;
 using CustomerOrderManagement.Models.EntityModels;
-using CustomerOrderManagement.Models.ViewModels.Customers;
 using CustomerOrderManagement.Service.Abstractions;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CustomerOrderManagement.API.Controllers
