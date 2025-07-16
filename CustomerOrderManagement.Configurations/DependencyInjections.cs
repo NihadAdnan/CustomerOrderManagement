@@ -1,9 +1,9 @@
-﻿using CustomerOrderManagement.Repository;
+using CustomerOrderManagement.Repository;
 using CustomerOrderManagement.Repository.Abstractions;
+using CustomerOrderManagement.Repository.Database;
 using CustomerOrderManagement.Repository.Repositories;
 using CustomerOrderManagement.Service;
 using CustomerOrderManagement.Service.Abstractions;
-using EFCoreSamples.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 namespace CustomerOrderManagement.Configurations

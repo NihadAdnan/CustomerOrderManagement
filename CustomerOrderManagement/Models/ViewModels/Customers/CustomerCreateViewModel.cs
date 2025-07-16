@@ -13,7 +13,7 @@ namespace CustomerOrderManagement.Models.ViewModels.Customers
         [Required]
         public string PhoneNo { get; set; }
 
-        [AddressValidation(ErrorMessage ="Address is not correct!", AddressLocation ="Dhaka")]
+        //[AddressValidation(ErrorMessage ="Address is not correct!", AddressLocation ="Dhaka")]
         public string? Address { get; set; }
 
         public List<Customer>? Customers { get; set; }
