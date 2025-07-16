@@ -14,6 +14,9 @@ namespace CustomerOrderManagement.Repository.Database
         public DbSet<Product> Products { get; set; }
         public DbSet<CustomerCategory> CustomersCategories { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<ProductStock> ProductStocks { get; set; }
+        public DbSet<CustomerAccountBalance> CustomerAccountBalances { get; set; }
+        public DbSet<CompanyAccountBalance> ComapanyAccountBalance { get; set; }
 
 
     }

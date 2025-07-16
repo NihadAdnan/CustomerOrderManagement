@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CustomerOrderManagement.Models.APIModels.Customer
+{
+    public class CustomerCreateDTO
+    {
+        [Required(ErrorMessage = "Please provide Name!")]
+        public string Name { get; set; }
+
+        [Required]
+        public string PhoneNo { get; set; }
+        public string? Address { get; set; }
+        public int CategoryId {  get; set; }
+    }
+}

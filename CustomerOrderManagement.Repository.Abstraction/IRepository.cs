@@ -8,7 +8,8 @@ namespace CustomerOrderManagement.Repository.Abstractions
         public Task<int> AddAsync(T entity);
         public Task<int> UpdateAsync(T entity);
         public Task<int> DeleteAsync(T entity);
-        public Task<IEnumerable<T>> GetAllAsync();
         public Task<T> GetById(Expression<Func<T, bool>> predicate);
+        public IQueryable<T> GetAll();
+        public Task<IEnumerable<T>>GetAllAsync();
     }
 }
